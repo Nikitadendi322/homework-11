@@ -1,8 +1,8 @@
 class Homework {
     public static void main(String[] args) {
         printIsLeapYear(2024);
-        recommendApplicationVersion(0, 1990);
-        calculateDeliveryDays()
+        choosingVersion(1, 2022);
+        calculateDeliveryDays(1);
     }
     /*
      *
@@ -28,28 +28,35 @@ class Homework {
     }
 
     //task2
-    public static void recommendApplicationVersion(int clientIos, int deviceYear) {
-        boolean deviceIsOld = isDeviceOld(deviceYear);
-        System.out.print("Установите ");
-        if (deviceIsOld) {
-            System.out.print("lite");
+    public static void choosingVersion(int os, int yearManufacture) {
+        String osType = " ";
+        switch (os) {
+            case 0:
+                osType = "IOS";
+                break;
+            case 1:
+                osType = "ANDROID";
+                System.out.printf("Установите %s версию для %s по ссылке", getVersionByYear(yearManufacture), osType);
         }
-        System.out.print("версию для ");
-        if (clientIos == 0) {
-            System.out.println("IOS");
-        } else {
-            System.out.println("Android");
-        }
-        //task 3
-        public static void calculateDeliveryDays(int deliveryDistance){
-            int deliveryDays =1;
-            if (daliveryDistance>20){
-                deliveryDays++;
-            }
-            if (deliveryDistance)
+    }
 
+
+    //task 3
+
+    public static void calculateDeliveryDays(int deliveryDistance) {
+        int deliveryDays = 1;
+        if (deliveryDistance > 20) {
+            deliveryDays++;
         }
+        if (deliveryDistance > 60 && deliveryDistance <= 100) {
+            deliveryDays++;
+        } else if (deliveryDistance > 100) {
+            return " не возможно расчитать срок доставки";
+        }
+        return " Потребуется дней:" + deliveryDays;
 
     }
+
+
 }
 
