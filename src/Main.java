@@ -1,8 +1,10 @@
+import java.time.LocalDate;
 class Homework {
     public static void main(String[] args) {
         printIsLeapYear(2024);
         choosingVersion(1, 2022);
-        calculateDeliveryDays(1);
+        calculateDeliveryDays(10);
+        getVersionByYear(1);
     }
     /*
      *
@@ -40,6 +42,14 @@ class Homework {
         }
     }
 
+    public static String getVersionByYear(int yearManufacture) {
+        if (yearManufacture < LocalDate.now().getYear()) {
+            return "light";
+        } else {
+            return "";
+        }
+    }
+
 
     //task 3
 
@@ -51,12 +61,9 @@ class Homework {
         if (deliveryDistance > 60 && deliveryDistance <= 100) {
             deliveryDays++;
         } else if (deliveryDistance > 100) {
-            return " не возможно расчитать срок доставки";
+            System.out.println(" не возможно расчитать срок доставки");
         }
-        return " Потребуется дней:" + deliveryDays;
+
 
     }
-
-
 }
-
