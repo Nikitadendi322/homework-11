@@ -3,7 +3,7 @@ class Homework {
     public static void main(String[] args) {
         printIsLeapYear(2024);
         choosingVersion(1, 2022);
-        calculateDeliveryDays(10);
+        calculateDeliveryDays(1);
         getVersionByYear(1);
     }
     /*
@@ -40,6 +40,7 @@ class Homework {
                 osType = "ANDROID";
                 System.out.printf("Установите %s версию для %s по ссылке", getVersionByYear(yearManufacture), osType);
         }
+        System.out.println();
     }
 
     public static String getVersionByYear(int yearManufacture) {
@@ -48,6 +49,7 @@ class Homework {
         } else {
             return "";
         }
+
     }
 
 
@@ -61,9 +63,14 @@ class Homework {
         if (deliveryDistance > 60 && deliveryDistance <= 100) {
             deliveryDays++;
         } else if (deliveryDistance > 100) {
+            deliveryDays = 0;
             System.out.println(" не возможно расчитать срок доставки");
         }
+        if (deliveryDays != 0) {
+            System.out.printf("Потребуется дней:" + deliveryDays);
+        }
+    }
 
 
     }
-}
+
